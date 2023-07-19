@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
    const [cart , setCart] = useState({})
    const [subTotal , setSubtotal] = useState();
    
-   console.log(cart);
+  
   //  console.log(subTotal)
    useEffect(() => {
     try {
@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }) {
     }
     else { 
       newCart[itemCode] = { qty: 1, price, nam, size, variant }
-      console.log("hiii")
+      
     }
     setCart(newCart);
     saveCart(newCart);

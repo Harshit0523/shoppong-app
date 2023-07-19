@@ -1,19 +1,8 @@
-// import image1 from "../../public/images/image1.jpg";
-// import image2 from "../public/images/image12.jpg";
 import React from "react";
-import { useRouter } from "next/router";
-import { HiOutlineShoppingBag } from "react-icons/hi";
-// import middle from "@components/middle";
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import { Carousel } from "react-responsive-carousel";
 
-const Slug = ({ product, addToCart }) => {
-  const router = useRouter();
-  const { slug } = router.query;
-  console.log("sds")
-  console.log(slug)
+const j = () => {
   return (
-    <>
+    <div>
       <section class="pt-12 pb-24 bg-blueGray-100 rounded-b-10xl overflow-hidden">
         <div class="container px-4 mx-auto">
           <div class="flex flex-wrap -mx-4">
@@ -348,22 +337,8 @@ const Slug = ({ product, addToCart }) => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
-export async function getServerSideProps(context) {
-  // console.log(context.query.slug);
-  // Fetch data from external API
-  let headers = {
-    Authorization:
-      "Bearer 2b37bc71bff4d9adc593d3069020aeecfec20f607696ce38a6de20bb98ed9167077eb3eeac0beaddd9e083926b1fe0e13ca7a117af61b3397935a05eb81bb56a4c4de88ecfd771f2140ae22b10d9630d3165c2d037c8ce5fa4c638008a9512c11a9cf312520d32859c7b14ba26c8cb3506e73edae64837a3825a2d3cbc060c79",
-  };
-  console.log(context.query.slug)
-  let a = await fetch(`http://localhost:1337/api/products?filters[slug]=` + context.query.slug +"&populate=*",{headers: headers});
-  let products = await a.json();
-  console.log(products);
-  // Pass data to the page via props
-  return { props: { product: products.data[0] } };
-}
-export default Slug;
+export default j;

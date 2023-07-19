@@ -10,7 +10,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 import Head from "next/head";
-
+import Middle from "@/components/Middle";
 const index = () => {
   return (
     <>
@@ -20,21 +20,22 @@ const index = () => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="styles/globals.css" />
       </Head>
-      <div className="relative w-full md:px-20 mx-auto mt-16 md:mt-20 ">
-        
-        <Carousel autoPlay={true} infiniteLoop={true} interval={3000} showStatus={false} thumbWidth={60}>
+      
+        <div className="w-60 h-60 m-auto" >
+        <Carousel autoPlay={true} infiniteLoop={true} interval={3000} showStatus={false}>
           <div>
-            <Image src={image1} className="aspect-[16/10] w-9/12" />
+            <Image src={image1} className="" />
           </div>
           <div>
-            <Image src={image2} />
+            <Image src={image2} className=""/>
           </div>
           <div>
             <Image src={image3} />
           </div>
-        </Carousel>
-      </div>
-
+        </Carousel> 
+        
+        {/* <Image src= {image1}  /> */}
+        </div>
       {/* Top products */}
 
       <h1 className="text-4xl font-bold my-4 mx-2 ml-6 md:ml-24">
