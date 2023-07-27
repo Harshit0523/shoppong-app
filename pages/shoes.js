@@ -16,11 +16,10 @@ const shoes = (props) => {
             return (
               <a href="#" class="group">
                 <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                  <Image
-                    height={200}
-                    width={200}
-                    src={item.attributes.thumbnail.data.attributes.name}
-                    alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+                  <img
+                    
+                    src={item.attributes.thumbnail.data && item.attributes.thumbnail.data.attributes.url}
+                    // alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
                     // class="h-full w-full object-cover object-center group-hover:opacity-75"
                   />
                 </div>
@@ -50,6 +49,9 @@ export async function getServerSideProps(context) {
   console.log("fatched");
   let products = await a.json();
   console.log(products);
+  
+
+  // console.log(products.data.attributes.thumbnail.data.attributes.name)
   return {
     props: { products: products },
   };
