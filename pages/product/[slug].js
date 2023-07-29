@@ -91,54 +91,17 @@ const Slug = ({ product, addToCart }) => {
                       ></path>
                     </svg>
                   </a>
+                  {product.attributes.image.data.map((item)=>{
+                    return(
                   <a class="h-30 block mb-4 mr-2 sm:mr-0" href="#">
                     <img
-                      class="h-full w-full"
-                      src="uinel-assets/images/ecommerce-product-info/placeholder1.png"
+                      class="h-full overflow-hidden w-full"
+                      src={item.attributes.url}
                       alt=""
                     />
                   </a>
-                  <a class="hidden sm:block h-30 mb-4 mr-2 sm:mr-0" href="#">
-                    <img
-                      class="h-full w-full"
-                      src="uinel-assets/images/ecommerce-product-info/placeholder2.png"
-                      alt=""
-                    />
-                  </a>
-                  <a
-                    class="hidden sm:block h-30 mb-4 mr-2 sm:mr-0 rounded-xl border-2 border-blueGray-500"
-                    href="#"
-                  >
-                    <img
-                      class="h-full w-full"
-                      src="uinel-assets/images/ecommerce-product-info/placeholder4.png"
-                      alt=""
-                    />
-                  </a>
-                  <a class="h-30 block mb-4 sm:mb-12 mr-4 sm:mr-0" href="#">
-                    <img
-                      class="h-full w-full"
-                      src="uinel-assets/images/ecommerce-product-info/placeholder3.png"
-                      alt=""
-                    />
-                  </a>
-                  <a
-                    class="inline-block transform -rotate-90 sm:transform-none hover:text-darkBlueGray-400"
-                    href="#"
-                  >
-                    <svg
-                      width="12"
-                      height="8"
-                      viewbox="0 0 12 8"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10.4594 0.289849C10.8128 -0.0966154 11.3841 -0.0966154 11.7349 0.289849C12.0871 0.676313 12.0897 1.30071 11.7349 1.68718L6.63794 7.21015C6.28579 7.59662 5.71584 7.59662 5.36108 7.21015L0.264109 1.68718C-0.0880364 1.30215 -0.0880363 0.676312 0.264109 0.289848C0.617558 -0.096616 1.18882 -0.0966159 1.53966 0.289848L6.00147 4.81927L10.4594 0.289849Z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </a>
+                  )})
+                  }
                 </div>
                 <div class="w-full sm:w-9/12 px-4">
                   <img
@@ -157,16 +120,15 @@ const Slug = ({ product, addToCart }) => {
                 <span class="text-xs text-gray-400 tracking-wider">
                   APPLE #3299803
                 </span>
-                <h2 class="mt-6 mb-4 text-5xl md:text-7xl lg:text-8xl font-heading font-medium">
-                  Apple iPhone 12 Pro (128GB) - Silver
+                <h2 class="mt-6 mb-4 text-xl lg:text-4xl font-heading font-medium">
+                {product.attributes.name}
                 </h2>
                 <p class="flex items-center mb-6">
-                  <span class="mr-2 text-sm text-blue-500 font-medium">$</span>
-                  <span class="text-3xl text-blue-500 font-medium">44.90</span>
+                  <span class="mr-2 text-sm text-blue-500 font-medium">₹</span>
+                  <span class="text-3xl text-blue-500 font-medium">{product.attributes.price}</span>
                 </p>
                 <p class="text-lg text-gray-400">
-                  The nulla commodo, commodo eros a lor, tristique lectus. Lorem
-                  sad 128 GB silver.
+                {product.attributes.de}
                 </p>
               </div>
               <div class="flex mb-6 items-center">
@@ -357,7 +319,7 @@ export async function getServerSideProps(context) {
   // Fetch data from external API
   let headers = {
     Authorization:
-      "Bearer 2b37bc71bff4d9adc593d3069020aeecfec20f607696ce38a6de20bb98ed9167077eb3eeac0beaddd9e083926b1fe0e13ca7a117af61b3397935a05eb81bb56a4c4de88ecfd771f2140ae22b10d9630d3165c2d037c8ce5fa4c638008a9512c11a9cf312520d32859c7b14ba26c8cb3506e73edae64837a3825a2d3cbc060c79",
+      "Bearer f2dc86acfb78c950fcbde0fa39547d40c9bcf401cba8e7220cf36d2a4e2acdcb6f77fe55ab5f0a49082553af4ea5fd40dceb57af5291e65377e5cf46ff157213fc5ecd20d806f3f72411840448f9f8ef8ac444466413cb32c390efd3773be47262df88a6f681e86d93fbcf0eca7eb8fd9ba5938a4e804165c5e5cf489374baa3",
   };
   console.log(context.query.slug)
   let a = await fetch(`http://localhost:1337/api/products?filters[slug]=` + context.query.slug +"&populate=*",{headers: headers});
