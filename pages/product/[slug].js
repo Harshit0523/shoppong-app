@@ -95,7 +95,7 @@ const Slug = ({ product, addToCart }) => {
                     return(
                   <a class="h-30 block mb-4 mr-2 sm:mr-0" href="#">
                     <img
-                      class="h-full overflow-hidden w-full"
+                      class=""
                       src={item.attributes.url}
                       alt=""
                     />
@@ -319,7 +319,7 @@ export async function getServerSideProps(context) {
   // Fetch data from external API
   let headers = {
     Authorization:
-      "Bearer f2dc86acfb78c950fcbde0fa39547d40c9bcf401cba8e7220cf36d2a4e2acdcb6f77fe55ab5f0a49082553af4ea5fd40dceb57af5291e65377e5cf46ff157213fc5ecd20d806f3f72411840448f9f8ef8ac444466413cb32c390efd3773be47262df88a6f681e86d93fbcf0eca7eb8fd9ba5938a4e804165c5e5cf489374baa3",
+      "",
   };
   console.log(context.query.slug)
   let a = await fetch(`http://localhost:1337/api/products?filters[slug]=` + context.query.slug +"&populate=*",{headers: headers});
