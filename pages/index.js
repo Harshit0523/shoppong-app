@@ -3,15 +3,14 @@ import image1 from "../public/images/image10.jpg";
 
 import image2 from "../public/images/image11.jpg";
 import image3 from "../public/images/image12.jpg";
-;
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import Head from "next/head";
 import Middle from "@/components/Middle";
-const index = () => {
+const index = ({ products }) => {
   return (
     <>
       <Head>
@@ -20,22 +19,25 @@ const index = () => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="styles/globals.css" />
       </Head>
-      
-        <div className="w-60 h-60 m-auto" >
-        <Carousel autoPlay={true} infiniteLoop={true} interval={3000} showStatus={false}>
-          <div>
-            <Image src={image1} className="" />
-          </div>
-          <div>
-            <Image src={image2} className=""/>
-          </div>
-          <div>
-            <Image src={image3} />
-          </div>
-        </Carousel> 
-        
+
+      <div className="w-10/12 m-auto h-full mt-24  border-4 border-black object-cover">
+        <Carousel
+          autoPlay={true}
+          infiniteLoop={true}
+          interval={3000}
+          // showStatus={false}
+          // showIndicators={false}
+          // thumbWidth={60}
+        >
+          <Image src={image1} className="h-full" />
+
+          <Image src={image2} className="h-[325px]" />
+
+          <Image src={image3} className="h-[325px]" />
+        </Carousel>
+
         {/* <Image src= {image1}  /> */}
-        </div>
+      </div>
       {/* Top products */}
 
       <h1 className="text-4xl font-bold my-4 mx-2 ml-6 md:ml-24">
@@ -43,105 +45,39 @@ const index = () => {
       </h1>
 
       <section className="w-full h-96 flex md:justify-center flex-nowrap overflow-x-auto ">
-        <div className="mx-8 md:mx-6">
-          <div className="w-64  border-2 rounded-md">
-            <div className="">
-              {/* image Section */}
-              <div className="bg-slate-500 w-full h-64 ">image section</div>
-              {/* about product */}
-              <div className="bg-slate-100">
-                <ul className="flex justify-between list-none">
-                  <li className="list-none">rating</li>
-                  <li className="list-none">colors</li>
-                </ul>
-                <div className="flex justify-between">
-                  <div>
-                    <li>product name</li>
-                    <li>price</li>
-                  </div>
-                  <div>
-                    <HiOutlineShoppingBag />
+        {products.data.map((item) => {
+          return (
+            <div className="mx-8 md:mx-6">
+              <div className="w-64 border-2 rounded-md ">
+                {/* image Section */}
+                <div className="bg-slate-500 w-full h-58 ">
+                  <img
+                    src={
+                      item.attributes.thumbnail.data &&
+                      item.attributes.thumbnail.data.attributes.url
+                    }
+                  />
+                </div>
+                {/* about product */}
+                <div className="bg-slate-100">
+                  <ul className="flex justify-between list-none">
+                    {/* <li className="list-none">rating</li> */}
+                    <li className="list-none">colors</li>
+                  </ul>
+                  <div className="flex justify-between">
+                    <div>
+                      <li>{item.attributes.name}</li>
+                      <li>price</li>
+                    </div>
+                    <div>
+                      <HiOutlineShoppingBag />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="mx-8 md:mx-6">
-          <div className="w-64  border-2 rounded-md">
-            <div className="">
-              {/* image Section */}
-              <div className="bg-slate-500 w-full h-64 ">image section</div>
-              {/* about product */}
-              <div className="bg-slate-100">
-                <ul className="flex justify-between list-none">
-                  <li className="list-none">rating</li>
-                  <li className="list-none">colors</li>
-                </ul>
-                <div className="flex justify-between">
-                  <div>
-                    <li>product name</li>
-                    <li>price</li>
-                  </div>
-                  <div>
-                    <HiOutlineShoppingBag />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mx-8 md:mx-6">
-          <div className="w-64  border-2 rounded-md">
-            <div className="">
-              {/* image Section */}
-              <div className="bg-slate-500 w-full h-64 ">image section</div>
-              {/* about product */}
-              <div className="bg-slate-100">
-                <ul className="flex justify-between list-none">
-                  <li className="list-none">rating</li>
-                  <li className="list-none">colors</li>
-                </ul>
-                <div className="flex justify-between">
-                  <div>
-                    <li>product name</li>
-                    <li>price</li>
-                  </div>
-                  <div>
-                    <HiOutlineShoppingBag />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mx-8 md:mx-6">
-          <div className="w-64  border-2 rounded-md">
-            <div className="">
-              {/* image Section */}
-              <div className="bg-slate-500 w-full h-64 ">image section</div>
-              {/* about product */}
-              <div className="bg-slate-100">
-                <ul className="flex justify-between list-none">
-                  <li className="list-none">rating</li>
-                  <li className="list-none">colors</li>
-                </ul>
-                <div className="flex justify-between">
-                  <div>
-                    <li>product name</li>
-                    <li>price</li>
-                  </div>
-                  <div>
-                    <HiOutlineShoppingBag />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </section>
       <h1 className="text-4xl font-bold my-4 mx-2 ml-6 md:ml-24">Top-Deal</h1>
       <section className="w-full h-96 flex md:justify-center flex-nowrap overflow-x-auto ">
@@ -336,5 +272,22 @@ const index = () => {
     </>
   );
 };
-
+export async function getServerSideProps(context) {
+  // console.log(context.query.slug);
+  // Fetch data from external API
+  let headers = {
+    Authorization:
+      "Bearer f2dc86acfb78c950fcbde0fa39547d40c9bcf401cba8e7220cf36d2a4e2acdcb6f77fe55ab5f0a49082553af4ea5fd40dceb57af5291e65377e5cf46ff157213fc5ecd20d806f3f72411840448f9f8ef8ac444466413cb32c390efd3773be47262df88a6f681e86d93fbcf0eca7eb8fd9ba5938a4e804165c5e5cf489374baa3",
+  };
+  // console.log(context.query.slug);
+  let a = await fetch(
+    ` http://localhost:1337/api/products?populate=*&[filters][categorys][slug][$eq]=top-products`,
+    { headers: headers }
+  );
+  let products = await a.json();
+  console.log("first");
+  console.log(products);
+  // Pass data to the page via props
+  return { props: { products: products } };
+}
 export default index;
