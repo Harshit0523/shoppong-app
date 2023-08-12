@@ -60,16 +60,13 @@ const index = ({ products }) => {
                 </div>
                 {/* about product */}
                 <div className="bg-slate-100">
-                  <ul className="flex justify-between list-none">
-                    {/* <li className="list-none">rating</li> */}
-                    <li className="list-none">colors</li>
-                  </ul>
+                  
                   <div className="flex justify-between">
-                    <div>
+                    <div className="list-none m-1">
                       <li>{item.attributes.name}</li>
-                      <li>price</li>
+                      <li>₹{item.attributes.price}</li>
                     </div>
-                    <div>
+                    <div className="item-center justify-center">
                       <HiOutlineShoppingBag />
                     </div>
                   </div>
@@ -285,8 +282,8 @@ export async function getServerSideProps(context) {
     { headers: headers }
   );
   let products = await a.json();
-  console.log("first");
-  console.log(products);
+  // console.log("first");
+  // console.log(products);
   // Pass data to the page via props
   return { props: { products: products } };
 }
