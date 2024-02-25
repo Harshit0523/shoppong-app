@@ -5,7 +5,7 @@ import Footer from "/components/Footer";
 import React, { useState, useEffect } from "react";
 export default function App({ Component, pageProps }) {
   const [bg, setBg] = useState("black");
-  const [textcolor, settextcolor] = useState("green");
+  const [textcolor, settextcolor] = useState("pink");
   const [itext, setitext] = useState("white");
 
 
@@ -73,7 +73,7 @@ export default function App({ Component, pageProps }) {
     let scrollvalue = window.scrollY;
     if (scrollvalue < 40) {
       setBg("black");
-      settextcolor("green");
+      settextcolor("pink");
       setitext("white");
     } else if (scrollvalue > 40) {
       setBg("white");

@@ -20,23 +20,10 @@ const index = ({ products }) => {
         <link rel="stylesheet" href="styles/globals.css" />
       </Head>
 
-      <div className="w-10/12 m-auto h-full mt-24  border-4 border-black object-cover">
-        <Carousel
-          autoPlay={true}
-          infiniteLoop={true}
-          interval={3000}
-          // showStatus={false}
-          // showIndicators={false}
-          // thumbWidth={60}
-        >
-          <Image src={image1} className="h-full" />
-
-          <Image src={image2} className="h-[325px]" />
-
-          <Image src={image3} className="h-[325px]" />
-        </Carousel>
-
-        {/* <Image src= {image1}  /> */}
+      <div className="flex items-center justify-center bg-gradient-to-r from-black to-gray-950  h-screen">
+        
+        <h1 className="text-white text-center    font-serif font-bold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">WELCOME TO our BEAUTY APP <span className="text-black">🙈</span> </h1> 
+        
       </div>
       {/* Top products */}
 
@@ -44,22 +31,22 @@ const index = ({ products }) => {
         Our Top Products
       </h1>
 
-      <section className="w-full h-96 flex md:justify-center flex-nowrap overflow-x-auto ">
+      {/* <section className="w-full h-96 flex md:justify-center flex-nowrap overflow-x-auto ">
         {products.data.map((item) => {
           return (
             <div className="mx-8 md:mx-6">
               <div className="w-64 border-2 rounded-md ">
                 {/* image Section */}
-                <div className="bg-slate-500 w-full h-58 ">
+                {/* <div className="bg-slate-500 w-full h-58 ">
                   <img
                     src={
                       item.attributes.thumbnail.data &&
                       item.attributes.thumbnail.data.attributes.url
                     }
                   />
-                </div>
+                </div> */}
                 {/* about product */}
-                <div className="bg-slate-100">
+                {/* <div className="bg-slate-100">
                   
                   <div className="flex justify-between">
                     <div className="list-none m-1">
@@ -71,11 +58,13 @@ const index = ({ products }) => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          );
-        })}
-      </section>
+              </div> */}
+            {/* </div> */}
+          {/* ); */}
+        {/* })} */}
+      {/* </section> */}
+
+      
       <h1 className="text-4xl font-bold my-4 mx-2 ml-6 md:ml-24">Top-Deal</h1>
       <section className="w-full h-96 flex md:justify-center flex-nowrap overflow-x-auto ">
         <div className="mx-8 md:mx-6">
@@ -269,22 +258,22 @@ const index = ({ products }) => {
     </>
   );
 };
-export async function getServerSideProps(context) {
+// export async function getServerSideProps(context) {
   // console.log(context.query.slug);
   // Fetch data from external API
-  let headers = {
-    Authorization:
-      "Bearer f2dc86acfb78c950fcbde0fa39547d40c9bcf401cba8e7220cf36d2a4e2acdcb6f77fe55ab5f0a49082553af4ea5fd40dceb57af5291e65377e5cf46ff157213fc5ecd20d806f3f72411840448f9f8ef8ac444466413cb32c390efd3773be47262df88a6f681e86d93fbcf0eca7eb8fd9ba5938a4e804165c5e5cf489374baa3",
-  };
+  // let headers = {
+  //   Authorization:
+  //     "Bearer f2dc86acfb78c950fcbde0fa39547d40c9bcf401cba8e7220cf36d2a4e2acdcb6f77fe55ab5f0a49082553af4ea5fd40dceb57af5291e65377e5cf46ff157213fc5ecd20d806f3f72411840448f9f8ef8ac444466413cb32c390efd3773be47262df88a6f681e86d93fbcf0eca7eb8fd9ba5938a4e804165c5e5cf489374baa3",
+  // };
   // console.log(context.query.slug);
-  let a = await fetch(
-    ` http://localhost:1337/api/products?populate=*&[filters][categorys][slug][$eq]=top-products`,
-    { headers: headers }
-  );
-  let products = await a.json();
+  // let a = await fetch(
+  //   ` http://localhost:1337/api/products?populate=*&[filters][categorys][slug][$eq]=top-products`,
+  //   { headers: headers }
+  // );
+  // let products = await a.json();
   // console.log("first");
   // console.log(products);
   // Pass data to the page via props
-  return { props: { products: products } };
-}
+  // return { props: { products: products } };
+// }
 export default index;

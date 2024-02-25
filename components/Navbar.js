@@ -61,7 +61,7 @@ const Navbar = ({
     <>
       <div>
         <nav
-          className={`z-50 bg-${bg} p-2 w-screen fixed flex top-0 justify-between cursor-pointer text-${textcolor}-600 shadow`}
+          className={`z-50 bg-${bg} p-2 w-screen fixed flex top-0 justify-between cursor-pointer text-pink-600 shadow`}
         >
           <div className="mid  text-2xl m-2 md:hidden ">
             <AiOutlineMenu onClick={toggleCart} />
@@ -170,12 +170,12 @@ const Navbar = ({
           </div>
 
           <div className="block ml-3 md:mr-48">
-            <Image src={logo} width={60} />{" "}
+             <BiSearch className={` text-4xl m-2  cursor-pointer`} />
           </div>
 
           {/* navbar right side */}
           <div className="right md:mr-20 flex">
-            <BiSearch className={` text-4xl m-2  cursor-pointer`} />
+            {/* <BiSearch className={` text-4xl m-2  cursor-pointer`} /> */}
             <div className="flex items-center">
               <li className={`list-none ml-1  `}>
                 <HiOutlineShoppingBag
@@ -191,12 +191,18 @@ const Navbar = ({
                 {Object.keys(carts).length}
               </li>
             </div>
-            <Link href={"/login"}>
+
+
+
+            {/* login option */}
+            {/* <Link href={"/login"}>
               {" "}
               <a>
                 <BiUserCircle className=" text-3xl m-2 cursor-pointer hidden md:inline  md:ml-4 mt-3 " />
               </a>
-            </Link>
+            </Link> */}
+
+
           </div>
         
 
