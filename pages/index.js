@@ -10,7 +10,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import Head from "next/head";
 import Middle from "@/components/Middle";
-const index = ({ products }) => {
+const index = ({ products , addToCart}) => {
   return (
     <>
       <Head>
@@ -22,10 +22,10 @@ const index = ({ products }) => {
 
       <div className="flex items-center justify-center bg-gradient-to-r from-black to-gray-950  h-screen">
         
-        <h1 className="text-white text-center    font-serif font-bold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">WELCOME TO our BEAUTY APP <span className="text-black">🙈</span> </h1> 
+        <h1 className="text-white text-center    font-serif font-bold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">WELCOME TO our BEAUTY APP  </h1> 
         
       </div>
-      {/* Top products */}
+      {/* Top products */} 
 
       <h1 className="text-4xl font-bold my-4 mx-2 ml-6 md:ml-24">
         Our Top Products
@@ -109,7 +109,7 @@ const index = ({ products }) => {
                     <li>price</li>
                   </div>
                   <div>
-                    <HiOutlineShoppingBag />
+                    <HiOutlineShoppingBag  />
                   </div>
                 </div>
               </div>
@@ -171,29 +171,18 @@ const index = ({ products }) => {
       <footer class="text-gray-600 body-font">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span class="ml-3 text-xl">Tailblocks</span>
+            
+          
           </a>
           <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-            © 2023 Shoe-Park —
+            © 2024 faceScan —
             <a
               href="https://twitter.com/knyttneve"
               class="text-gray-600 ml-1"
               rel="noopener noreferrer"
               target="_blank"
             >
-              @knyttneve
+            
             </a>
           </p>
           <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">

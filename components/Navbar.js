@@ -11,9 +11,12 @@ import {
 import { FaLessThan } from "react-icons/fa";
 import { SiJordan, SiNike } from "react-icons/si";
 import { CgAdidas } from "react-icons/cg";
-import { GiRunningShoe, GiConverseShoe } from "react-icons/gi";
+import { GiRunningShoe, GiConverseShoe ,GiLipstick } from "react-icons/gi";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { BiUserCircle, BiSearch } from "react-icons/bi";
+import { LuScanFace } from "react-icons/lu";
+import { HiPencil } from "react-icons/hi2";
+import { IoBrush } from "react-icons/io5";
 import Link from "next/link";
 
 import {
@@ -75,7 +78,7 @@ const Navbar = ({
           >
             <span
               onClick={toggleCart}
-              className="absolute top-2 left-3 cursor-pointer text-2xl text-green-600"
+              className="absolute top-2 left-3 cursor-pointer text-2xl text-pink-600"
             >
               <FaLessThan />
             </span>
@@ -87,56 +90,56 @@ const Navbar = ({
                   <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full">
                     <Link href="/shoes">
                       {" "}
-                      <SiJordan
+                      <GiLipstick 
                         className="text-4xl m-2"
                         onClick={toggleCart}
                       />{" "}
                     </Link>
                   </li>
-                  <li className="font-bold text-center">JORDAN</li>
+                  <li className="font-bold text-center">LIPS</li>
                 </ul>
 
                 <ul>
                   <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full">
-                    <SiNike className="text-5xl m-2" />{" "}
+                    <HiPencil  className="text-4xl m-2" />{" "}
                   </li>
-                  <li className="font-bold text-center">NIKE</li>
+                  <li className="font-bold text-center">EYE</li>
                 </ul>
 
                 <ul>
                   <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full">
-                    <CgAdidas className="text-4xl m-2" />{" "}
+                    <IoBrush idas className="text-4xl m-2" />{" "}
                   </li>
-                  <li className="font-bold text-center">ADIDAS</li>
+                  <li className="font-bold text-center">FOUNDATION</li>
                 </ul>
 
-                <ul>
+                {/* <ul>
                   <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full">
                     <GiRunningShoe className="text-4xl m-2" />{" "}
                   </li>
-                  <li className="font-bold text-center">SNEAKERS</li>
-                </ul>
-                <ul>
+                  <li className="font-bold text-center"></li>
+                </ul> */}
+                {/* <ul>
                   <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full">
                     <GiConverseShoe className="text-4xl m-2" />{" "}
                   </li>
                   <li className="font-bold text-center">LONG</li>
-                </ul>
+                </ul> */}
 
-                <ul>
+                {/* <ul>
                   <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full">
                     <CgAdidas className="text-4xl m-2" />{" "}
                   </li>
                   <li className="font-bold text-center">adidas</li>
-                </ul>
+                </ul> */}
 
-                <ul>
+                {/* <ul>
                   <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full">
                     <CgAdidas className="text-4xl m-2" />{" "}
                   </li>
                   <li className="font-bold text-center">adidas</li>
-                </ul>
-                <hr className="text-white" />
+                </ul> */}
+                {/* <hr className="text-white" /> */}
               </div>
             </div>
             <hr className="" />
@@ -150,10 +153,10 @@ const Navbar = ({
               <li className="list-none text-2xl font-bold mt-2">Contact Us</li>
             </div>
             <hr className="my-2" />
-            <div>
+            {/* <div>
               <li className="list-none text-2xl font-bold mt-2">Your Order</li>
-            </div>
-            <hr className="my-2" />
+            </div> */}
+            {/* <hr className="my-2" /> */}
           </div>
 
           <div className="hidden md:block">
@@ -162,15 +165,15 @@ const Navbar = ({
                 {" "}
                 <a href="/"> Home</a>{" "}
               </li>
-              <li className="text-2xl font-semibold ml-16  hover:text-slate-100 ">
+              <li className="text-2xl font-semibold ml-16  hover:text-slate-100 " >
                 Category
               </li>
-              <li className="text-2xl font-semibold ml-16">Wishlist</li>
+              {/* <li className="text-2xl font-semibold ml-16">Wishlist</li> */}
             </ul>
           </div>
 
           <div className="block ml-3 md:mr-48">
-             <BiSearch className={` text-4xl m-2  cursor-pointer`} />
+            <LuScanFace className={` text-4xl m-2  cursor-pointer`} />
           </div>
 
           {/* navbar right side */}
