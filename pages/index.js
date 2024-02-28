@@ -84,7 +84,7 @@ const index = ({ products , addToCart}) => {
                     <li>price</li>
                   </div>
                   <div>
-                    <HiOutlineShoppingBag />
+                    <HiOutlineShoppingBag onClick={() => { addToCart("hello", 1, 120, 'foundation', 'XL', "Red") }}/>
                   </div>
                 </div>
               </div>
