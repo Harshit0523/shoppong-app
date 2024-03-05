@@ -19,13 +19,13 @@ const shoes = (props) => {
                 <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     
-                    src={item.attributes.thumbnail.data && item.attributes.thumbnail.data.attributes.url}
-                    // alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
-                    // class="h-full w-full object-cover object-center group-hover:opacity-75"
+                    src={item.attributes.image.data && item.attributes.image.data.attributes.url}
+                    alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+                    className="h-full w-full object-cover object-center group-hover:opacity-75"
                   />
                 </div>
                 <h3 class="mt-4 text-sm text-gray-700">
-                  {item.attributes.name}
+                  {item.attributes.title}
                 </h3>
                 <p class="mt-1 text-lg font-medium text-gray-900">
                   {item.attributes.price}
@@ -42,7 +42,7 @@ const shoes = (props) => {
 export async function getServerSideProps(context) {
   let headers = {
     Authorization:
-      "Bearer f2dc86acfb78c950fcbde0fa39547d40c9bcf401cba8e7220cf36d2a4e2acdcb6f77fe55ab5f0a49082553af4ea5fd40dceb57af5291e65377e5cf46ff157213fc5ecd20d806f3f72411840448f9f8ef8ac444466413cb32c390efd3773be47262df88a6f681e86d93fbcf0eca7eb8fd9ba5938a4e804165c5e5cf489374baa3",
+      "Bearer fc98a7767174b568e47f172980ad65c6eea482262a068376fe2fb93728ab0f0b8c8ab3804450162fd0c617154ecfc0294169af949eb146cb271407d2a94172cc52869d2bf8c2b11b02184147f8b593d993e2025f877cc8bdd90fbf9e8474fdcceaff58b77cfb72d034a128f8aa67b3cb94270a1601e647a30892d3950540f604",
   };
   console.log("before");
   let a = await fetch("http://localhost:1337/api/products?populate=*", {
