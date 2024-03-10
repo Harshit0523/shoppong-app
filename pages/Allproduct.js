@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 
 // import Middle from "@/components/middle";
 import Image from "next/image";
-const shoes = (props) => {
+const Allproduct = (props) => {
   return (
     
     <div class="bg-white">
@@ -28,7 +28,7 @@ const shoes = (props) => {
                   {item.attributes.title}
                 </h3>
                 <p class="mt-1 text-lg font-medium text-gray-900">
-                  {item.attributes.price}
+                ₹{item.attributes.price}
                 </p>
               </Link>
             )
@@ -58,4 +58,4 @@ export async function getServerSideProps(context) {
     props: { products: products },
   };
 }
-export default shoes;
+export default Allproduct;

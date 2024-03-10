@@ -22,15 +22,15 @@ const footer = (props) => {
           <li className={`text-xs font-semibold text-${props.itext}`}>Category</li>
         </ul>
         
-        <ul>
+        {/* <ul>
           <li className={`text-2xl mx-2`} ><HiHeart/></li>
           <li className={`text-xs font-semibold text-${props.itext}`}>Wishlist</li>
-        </ul>
+        </ul> */}
 
-        <ul>
+        {/* <ul>
           <li className={`text-2xl mx-2`}><RiUserFill /></li>
           <li className={`text-xs font-semibold text-${props.itext}`}>Account</li>
-        </ul>
+        </ul> */}
         <ul>
           <li className={`text-2xl mx-2`}><BsWhatsapp/></li>
           <li className={`text-xs ml-2 font-semibold text-${props.itext}`}>Chat</li>

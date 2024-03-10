@@ -10,6 +10,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import Head from "next/head";
 import Middle from "@/components/Middle";
+import Link from "next/link";
 const index = ({ products , addToCart}) => {
   return (
     <>
@@ -31,144 +32,47 @@ const index = ({ products , addToCart}) => {
         Our Top Products
       </h1>
 
-      {/* <section className="w-full h-96 flex md:justify-center flex-nowrap overflow-x-auto ">
-        {products.data.map((item) => {
-          return (
-            <div className="mx-8 md:mx-6">
-              <div className="w-64 border-2 rounded-md ">
-                {/* image Section */}
-                {/* <div className="bg-slate-500 w-full h-58 ">
-                  <img
-                    src={
-                      item.attributes.thumbnail.data &&
-                      item.attributes.thumbnail.data.attributes.url
-                    }
-                  />
-                </div> */}
-                {/* about product */}
-                {/* <div className="bg-slate-100">
-                  
-                  <div className="flex justify-between">
-                    <div className="list-none m-1">
-                      <li>{item.attributes.name}</li>
-                      <li>₹{item.attributes.price}</li>
-                    </div>
-                    <div className="item-center justify-center">
-                      <HiOutlineShoppingBag />
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-            {/* </div> */}
-          {/* ); */}
-        {/* })} */}
-      {/* </section> */}
+     
 
       
       <h1 className="text-4xl font-bold my-4 mx-2 ml-6 md:ml-24">Top-Deal</h1>
-      <section className="w-full h-96 flex md:justify-center flex-nowrap overflow-x-auto ">
-        <div className="mx-8 md:mx-6">
-          <div className="w-64  border-2 rounded-md">
-            <div className="">
-              {/* image Section */}
-              <div className="bg-slate-500 w-full h-64 ">image section</div>
-              {/* about product */}
-              <div className="bg-slate-100">
-                <ul className="flex justify-between list-none">
-                  <li className="list-none">rating</li>
-                  <li className="list-none">colors</li>
-                </ul>
-                <div className="flex justify-between">
-                  <div>
-                    <li>product name</li>
-                    <li>price</li>
-                  </div>
-                  <div>
-                    <HiOutlineShoppingBag onClick={() => { addToCart("hello", 1, 120, 'foundation', 'XL', "Red") }}/>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section className="w-full h-screen flex md:justify-center flex-nowrap ">
+       
+        
+          {products.data.map((item) => {
+            return (
+              
+              <Link  href={`/product/${item.attributes.slug}`}>
 
-        <div className="mx-8 md:mx-6">
-          <div className="w-64  border-2 rounded-md">
-            <div className="">
-              {/* image Section */}
-              <div className="bg-slate-500 w-full h-64 ">image section</div>
-              {/* about product */}
-              <div className="bg-slate-100">
-                <ul className="flex justify-between list-none">
-                  <li className="list-none">rating</li>
-                  <li className="list-none">colors</li>
-                </ul>
-                <div className="flex justify-between">
-                  <div>
-                    <li>product name</li>
-                    <li>price</li>
-                  </div>
-                  <div>
-                    <HiOutlineShoppingBag  />
-                  </div>
+                <div className=" m-2"> 
+                <div class=" h-">
+                  <img
+                    
+                    src={item.attributes.img.data && item.attributes.img.data.attributes.url}
+                    alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+                    className=""
+                  />
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                <h3 class="mt-4 text-sm text-gray-700">
+                  {item.attributes.title}
+                </h3>
+                <p class="mt-1 text-lg font-medium text-gray-900">
+                ₹{item.attributes.price}
+                </p>
+                </div>
+              </Link>
+            )
+          })}
+        
 
-        <div className="mx-8 md:mx-6">
-          <div className="w-64  border-2 rounded-md">
-            <div className="">
-              {/* image Section */}
-              <div className="bg-slate-500 w-full h-64 ">image section</div>
-              {/* about product */}
-              <div className="bg-slate-100">
-                <ul className="flex justify-between list-none">
-                  <li className="list-none">rating</li>
-                  <li className="list-none">colors</li>
-                </ul>
-                <div className="flex justify-between">
-                  <div>
-                    <li>product name</li>
-                    <li>price</li>
-                  </div>
-                  <div>
-                    <HiOutlineShoppingBag />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      
 
-        <div className="mx-8 md:mx-6">
-          <div className="w-64  border-2 rounded-md">
-            <div className="">
-              {/* image Section */}
-              <div className="bg-slate-500 w-full h-64 ">image section</div>
-              {/* about product */}
-              <div className="bg-slate-100">
-                <ul className="flex justify-between list-none">
-                  <li className="list-none">rating</li>
-                  <li className="list-none">colors</li>
-                </ul>
-                <div className="flex justify-between">
-                  <div>
-                    <li>product name</li>
-                    <li>price</li>
-                  </div>
-                  <div>
-                    <HiOutlineShoppingBag />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+       
+
+        
       </section>
 
-      <footer class="text-gray-600 body-font">
+      <footer class="text-gray-600 body-font bottom-0">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             
@@ -247,22 +151,23 @@ const index = ({ products , addToCart}) => {
     </>
   );
 };
-// export async function getServerSideProps(context) {
-  // console.log(context.query.slug);
-  // Fetch data from external API
-  // let headers = {
-  //   Authorization:
-  //     "Bearer f2dc86acfb78c950fcbde0fa39547d40c9bcf401cba8e7220cf36d2a4e2acdcb6f77fe55ab5f0a49082553af4ea5fd40dceb57af5291e65377e5cf46ff157213fc5ecd20d806f3f72411840448f9f8ef8ac444466413cb32c390efd3773be47262df88a6f681e86d93fbcf0eca7eb8fd9ba5938a4e804165c5e5cf489374baa3",
-  // };
-  // console.log(context.query.slug);
-  // let a = await fetch(
-  //   ` http://localhost:1337/api/products?populate=*&[filters][categorys][slug][$eq]=top-products`,
-  //   { headers: headers }
-  // );
-  // let products = await a.json();
-  // console.log("first");
-  // console.log(products);
-  // Pass data to the page via props
-  // return { props: { products: products } };
-// }
+export async function getServerSideProps(context) {
+  let headers = {
+    Authorization:
+      "Bearer 264f9c48a0913b043ad9a26362fdb806087d935d1a6318de3c58fd56a94b5b1c9a5d003d092cdc6e65815ef26486b7e9388f23675387d952236a56112b759e5715e62672e17d0af96254533b8604962c166c8d87316ad796523f614eec61fe0b43777b84046965995648f61e3bd338f99c7607a1afa9845b3cbebdf29926d18d",
+  };
+  console.log("before");
+  let a = await fetch("http://localhost:1337/api/Top-deals?populate=*", {
+    headers: headers,
+  });
+  console.log("fatched");
+  let products = await a.json();
+  console.log(products);
+  
+
+  // console.log(products.data.attributes.thumbnail.data.attributes.name)
+  return {
+    props: { products: products },
+  };
+}
 export default index;

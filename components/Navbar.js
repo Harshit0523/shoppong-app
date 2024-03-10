@@ -26,7 +26,7 @@ import {
   faBagShopping,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import shoes from "@/pages/shoes";
+import shoes from "@/pages/Allproduct";
 
 const Navbar = ({
   bg,
@@ -74,7 +74,7 @@ const Navbar = ({
 
           <div
             ref={ref}
-            className={` md:hidden w-full h-[100vh] sideCart absolute z-10  bg-${bg} px-8 py-10 top-0 right-0 transform transition-transform -translate-x-full ease-in duration-500 `}
+            className={`  w-full h-[100vh] sideCart absolute z-10  bg-${bg} px-8 py-10 top-0 right-0 transform transition-transform -translate-x-full ease-in duration-500 `}
           >
             <span
               onClick={toggleCart}
@@ -82,10 +82,25 @@ const Navbar = ({
             >
               <FaLessThan />
             </span>
-            <div>
+            <div className="lg:w-1/2">
               <h2 className="font-bold mt-4  text-2xl">Categories</h2>
 
-              <div className="mt-8 flex flex-wrap justify-between gap-5">
+              <div className="mt-8 flex flex-wrap justify-between ">
+                <ul>
+                  <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full ml-5">
+                  <Link href="/Allproduct"><span className="text-bold text-3xl m-2" onClick={toggleCart}>ALL</span> </Link>
+                  </li>
+                  <li className="font-bold text-center">ALL PRODUCTS</li>
+                </ul>
+                <ul>
+                  <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full ml-5">
+                    
+                  <Link href="/Allproduct"> <IoBrush idas className="text-4xl m-2" onClick={toggleCart} />{" "}
+                  </Link>
+                  </li>
+                  <li className="font-bold text-center">FOUNDATIONS</li>
+                </ul>
+
                 <ul>
                   <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full">
                     <Link href="/shoes">
@@ -106,12 +121,8 @@ const Navbar = ({
                   <li className="font-bold text-center">EYE</li>
                 </ul>
 
-                <ul>
-                  <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full">
-                    <IoBrush idas className="text-4xl m-2" />{" "}
-                  </li>
-                  <li className="font-bold text-center">FOUNDATION</li>
-                </ul>
+
+
 
                 {/* <ul>
                   <li className=" bg-green-100 w-16 h-16 border-4 border-black  rounded-full">
@@ -142,17 +153,17 @@ const Navbar = ({
                 {/* <hr className="text-white" /> */}
               </div>
             </div>
-            <hr className="" />
+            <hr className="lg:w-1/2" />
             {/* about section */}
 
             <div>
               <li className="list-none text-2xl font-bold mt-2">About Us</li>
             </div>
-            <hr className="mt-2" />
+            <hr className="mt-2 lg:w-1/2" />
             <div>
               <li className="list-none text-2xl font-bold mt-2">Contact Us</li>
             </div>
-            <hr className="my-2" />
+            <hr className="my-2 lg:w-1/2" />
             {/* <div>
               <li className="list-none text-2xl font-bold mt-2">Your Order</li>
             </div> */}
@@ -165,7 +176,7 @@ const Navbar = ({
                 {" "}
                 <a href="/"> Home</a>{" "}
               </li>
-              <li className="text-2xl font-semibold ml-16  hover:text-slate-100 " >
+              <li className="text-2xl font-semibold ml-16  hover:text-slate-100 " onClick={toggleCart} >
                 Category
               </li>
               {/* <li className="text-2xl font-semibold ml-16">Wishlist</li> */}

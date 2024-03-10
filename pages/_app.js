@@ -36,14 +36,14 @@ export default function App({ Component, pageProps }) {
     setSubtotal(subt)
   }
     
-   const addToCart = (itemCode, qty, price, nam, size, variant) => {
+   const addToCart = (itemCode, qty, price, nam) => {
     let newCart = cart;
     if (itemCode in cart) {
       newCart[itemCode].qty = cart[itemCode].qty + qty
 
     }
     else { 
-      newCart[itemCode] = { qty: 1, price, nam, size, variant }
+      newCart[itemCode] = { qty: 1, price, nam }
       
     }
     setCart(newCart);
